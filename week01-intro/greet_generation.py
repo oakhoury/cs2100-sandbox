@@ -16,7 +16,7 @@ def get_generation(year):
     elif year <= 1996:
         generation = "Millenials"
     elif year <= 2012:
-        generation = "Generation Z (\"Zoomers\")"
+        generation = "Generation Z (\"Zoomers\")"  # Note the escaped character
     else:
         generation = "Generation Alpha"
 
@@ -24,7 +24,7 @@ def get_generation(year):
 
 def main():
     name = input("What is your name: ")
-    year = int(input("What is your birth year: "))
+    year = input("What is your birth year: ")
 
     generation = get_generation(year)
 
@@ -34,3 +34,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+###  Key takeaways
+# Correct indentation is imperative as there are no block delimiters
+# Variables are typed, but it's determined at run-time! 
+### 
+
+
+# TODO: We can do better... back to slides to see how!
