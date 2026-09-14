@@ -31,10 +31,21 @@ def test_3_by_4() -> None:
     assert get_area_of_rectangle(3, 4) == 12
 
 
-def test_negative_area() -> None:
+def test_negative_width() -> None:
     """Make sure it raises a ValueError for a negative width"""
     with pytest.raises(ValueError):
         get_area_of_rectangle(-1, 4)
+
+def test_negative_height() -> None:
+    """Make sure it raises a ValueError for a negative height"""
+    with pytest.raises(ValueError):
+        get_area_of_rectangle(1, -4)
+
+def test_negative_area() -> None:
+    """Make sure it raises a ValueError for a negative width and height"""
+    with pytest.raises(ValueError):
+        get_area_of_rectangle(-1, -4)
+
 
 
 if __name__ == '__main__':
