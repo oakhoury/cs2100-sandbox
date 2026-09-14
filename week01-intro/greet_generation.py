@@ -59,8 +59,6 @@ def main() -> None:
 
     print(f"Great to meet you {name}, you are in the {generation}!")
 
-
-
 if __name__ == '__main__':  # if file is being executed
     main()
 
