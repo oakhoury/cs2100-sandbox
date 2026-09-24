@@ -2,13 +2,13 @@ import pytest
 
 # See: https://catalog.northeastern.edu/undergraduate/academic-policies-procedures/progression-standards/
 
-FIRST_YEAR = 'First year'
-SOPHOMORE = 'Sophomore'
-JUNIOR = 'Junior'
-SENIOR = 'Senior'
+FIRST_YEAR : str = 'First year'
+SOPHOMORE : str = 'Sophomore'
+JUNIOR : str = 'Junior'
+SENIOR : str = 'Senior'
 
-CLASS_STANDING_CUTOFFS = [0, 32, 64, 96]
-CLASS_STANDINGS = [FIRST_YEAR, SOPHOMORE, JUNIOR, SENIOR]
+CLASS_STANDING_CUTOFFS : list[int] = [0, 32, 64, 96]
+CLASS_STANDINGS : list[str] = [FIRST_YEAR, SOPHOMORE, JUNIOR, SENIOR]
 
 class Student:
     """Models a student at a university"""
