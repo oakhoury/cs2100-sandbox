@@ -2,7 +2,6 @@ import pytest
 
 # See: https://catalog.northeastern.edu/undergraduate/academic-policies-procedures/progression-standards/
 
-
 FIRST_YEAR : str = 'First year'
 SOPHOMORE : str = 'Sophomore'
 JUNIOR : str = 'Junior'
@@ -12,6 +11,10 @@ CLASS_STANDING_CUTOFFS : list[int] = [0, 32, 64, 96]
 CLASS_STANDINGS : list[str] = [FIRST_YEAR, SOPHOMORE, JUNIOR, SENIOR]
 FULL_TIME_CREDITS = 16
 
+# DISCLAIMER: This sample code is done to demonstrate concepts in a course
+# As such, it's incomplete. For example, it's missing complete docstrings
+# that are otherwise desired/required in our code.
+
 class Student:
     """Models a student at a university"""
     def __init__(self, student_id : str, name : str, credits_earned: int) -> None:
@@ -20,11 +23,17 @@ class Student:
         self.credits_earned = credits_earned
 
     def earn_credits(self, additional_credits : int) -> None:
-        """Updates the accumulated credits earned by the `credits` amount """
+        """Updates the accumulated credits earned by the `credits` amount.
+        
+            As discussed, this is a mutator method as it mutates/changes the state of the object.
+        """
         self.credits_earned += additional_credits
 
     def get_class_standing(self) -> str:
-        """Returns the class standing of the student based on accumulated credits earned"""
+        """Returns the class standing of the student based on accumulated credits earned.
+        
+            This is an accessor method as it makes no mutations/changes on the object.
+        """
         class_standing : str = SENIOR
         if self.credits_earned < 32:
             class_standing = FIRST_YEAR
@@ -38,6 +47,12 @@ class Student:
     def __str__(self) -> str:
         return f'{self.name}, {self.get_class_standing()}, with id {self.id} ' + \
                f'has earned {self.credits_earned} credits'
+
+    def __eq__(self, other_student : object) -> bool:
+        """Compares two objects for equality returning True if id's are the same"""
+        if isinstance(other_student, Student):
+            return self.id == other_student.id # Enough as students are assumed to have unique id's
+        return False
 
 
 @pytest.fixture(name="senior_student")
@@ -72,7 +87,11 @@ class TestStudent:  # Name must start with Test
 
 def end_of_term_earn_credits(students : list[Student]) -> None:
     """Simulates end of a term by each student in the list earning \
-        FULL_TIME_CREDITS, assumes a full-time load and they pass all courses"""
+        FULL_TIME_CREDITS, assumes a full-time load and they pass all courses.
+        
+        As we discussed, this is a mutator!! Note that it's not a method of any class.
+        We need more classes to find a home for this as a method.
+    """
 
     for s in students:
         s.earn_credits(FULL_TIME_CREDITS)
@@ -90,6 +109,9 @@ def main() -> None:
     # Alternatively, use list comprehension
     # print("\n".join(str(s) for s in all_students))
 
+    for student in all_students:
+        if student == grace:   # Python will call:   student.__eq__(grace)
+            print('Found Grace in the list of all students')
 
 if __name__ == "__main__":
     main()
