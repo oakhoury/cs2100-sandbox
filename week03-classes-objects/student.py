@@ -44,7 +44,12 @@ class Student:
 
         return class_standing
 
+    def __repr__(self) -> str:
+        """"A representation of the Student"""
+        return f'Student(id={self.id})'
+    
     def __str__(self) -> str:
+        """A descriptive string representation of the Student"""
         return f'{self.name}, {self.get_class_standing()}, with id {self.id} ' + \
                f'has earned {self.credits_earned} credits'
 
@@ -54,6 +59,24 @@ class Student:
             return self.id == other_student.id # Enough as students are assumed to have unique id's
         return False
 
+james : Student = Student('000135678', 'James Gosling', 115)
+james2 : Student = Student('00047265', 'James Patrick', 115)
+
+# ....
+# s = james
+# t = james2
+# #...
+
+# if s == t:
+#     print("objects are equal")
+# else:
+#     print("objects are NOT equal")
+
+# gosling : str = "James Gosling"
+# if s == gosling:   # Comparing a Student object to a str object
+#     print("objects are equal")
+# else:
+#     print("objects are NOT equal")
 
 @pytest.fixture(name="senior_student")
 def fixture_senior_student() -> Student:
@@ -105,7 +128,19 @@ def main() -> None:
 
     end_of_term_earn_credits(all_students)
 
+    print(f"\n{'-'*10} print(*list) after end of term:")
     print(*all_students, sep="\n") # *all_students will "unpack" the list
+
+    # vs...
+
+    # One more alternative, for print(all_students) to work and display: [object1, object2]
+    #   where object1 is its string representation
+    # Need to define the __repr__() method of the Student class
+
+    print(f"\n\n{'-'*10} print(list):")
+    print(all_students)
+
+
     # Alternatively, use list comprehension
     # print("\n".join(str(s) for s in all_students))
 
