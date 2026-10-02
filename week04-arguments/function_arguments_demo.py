@@ -1,4 +1,8 @@
-
+"""
+Code to demonstrate:
+(1) variable number of arguments,
+(2) variable number of keyword arguments
+"""
 
 ###########################################
 # While default parameter values are useful, beward that if the default

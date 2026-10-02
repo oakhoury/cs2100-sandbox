@@ -1,5 +1,8 @@
-import pytest
-
+"""
+Code to demonstrate:
+(1) default argument values, 
+(2) keyword arguments
+"""
 UNDECLARED : str = 'Undeclared'
 
 # DISCLAIMER: This sample code is done to demonstrate concepts in a course
@@ -7,7 +10,7 @@ UNDECLARED : str = 'Undeclared'
 # that are otherwise desired/required in our code.
 
 # This class is defined only with an object initializer as it's used to
-# demonstrate default argument values and keyword parameters
+# demonstrate default argument values and keyword arguments
 
 class Student:
     """Models a student at a university"""
