@@ -21,8 +21,8 @@ class Pair(Generic[A, B]):
 
 def main() -> None:
    '''Sample instances of Pair and calls on methods'''
-   p1 = Pair(10, 20)
-   p2 = Pair('center', p1)
+   p1 : Pair[int, int] = Pair(10, 20)
+   p2 : Pair[str, Pair]= Pair('center', p1)
 
    print(f'Before swap\np1={p1}, p2={p2}')
 
