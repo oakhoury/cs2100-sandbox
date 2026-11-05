@@ -1,0 +1,10 @@
+[
+  {"ts": "2024-09-02T13:03:00Z", "username": "student123", "ip_addr": "203.0.113.7",
+   "ms_played": 240500, "master_metadata_track_name": "Paper Lanterns", "episode_name": null},
+  {"ts": "2024-09-02T13:00:00Z", "username": "student123", "ip_addr": "203.0.113.7",
+   "ms_played": 180000, "master_metadata_track_name": "Neon Harbor", "episode_name": null},
+  {"ts": "2024-09-02T14:00:00Z", "username": "student123", "ip_addr": "203.0.113.7",
+   "ms_played": 1800000, "master_metadata_track_name": null, "episode_name": "Systems Weekly"},
+  {"ts": "2024-09-02T15:30:00Z", "username": "student123", "ip_addr": "203.0.113.7",
+   "ms_played": 3000, "master_metadata_track_name": null, "episode_name": null}
+]
